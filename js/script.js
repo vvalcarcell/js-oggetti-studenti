@@ -41,11 +41,16 @@ document.getElementById('add').addEventListener('click', function () {
 
         var studentName = prompt('Inserisci il nome dello studente');
         var studentSurname = prompt('Inserisci il cognome dello studente');
-        var studentAge = prompt('Inserisci l\'età dello studente');
+        var studentAge = parseInt(prompt('Inserisci l\'età dello studente'));
+
+        while (isNaN(studentAge)) {
+            alert('Inserisci l\'età dello studente!')
+            studentAge = parseInt(prompt('Inserisci l\'età dello studente'));
+        }
 
         schoolClass.students.push({
-            name: studentName,
-            surname: studentSurname,
+            name: studentName[0].toUpperCase() + studentName.slice(1).toLowerCase(),
+            surname: studentSurname[0].toUpperCase() + studentName.slice(1).toLowerCase(),
             age: studentAge
         });
 
