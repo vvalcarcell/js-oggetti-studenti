@@ -16,5 +16,13 @@ var schoolClass = {
     ]
 }
 
+// for (i = 0; i < schoolClass.students.length; i++) {
 
+//     for (var key in schoolClass.students[i]) {
+//         document.getElementById('students').innerHTML += '<li>' + key + ': ' + students[i][key];
+//     }
+
+//     document.getElementById('students').innerHTML += '</br>';
+
+// }
 
