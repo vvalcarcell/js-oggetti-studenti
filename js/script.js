@@ -1,4 +1,13 @@
 maxStudents = 4;
+divInfo = document.getElementById('info');
+divStudents = document.getElementById('students');
+function check() {
+    if (schoolClass.students.length < maxStudents) {
+        divInfo.innerHTML = 'Ancora ' + (maxStudents - schoolClass.students.length) + ' posti disponili!';
+    } else {
+        divInfo.innerHTML = 'Non ci sono più posti disponibili';
+    }
+}
 
 var prof = {
     name: 'Paolino',
@@ -20,17 +29,12 @@ var schoolClass = {
 
 for (i = 0; i < schoolClass.students.length; i++) {
     for (var key in schoolClass.students[i]) {
-        document.getElementById('students').innerHTML += '<li>' + key + ': ' + schoolClass.students[i][key];
+        divStudents.innerHTML += '<li>' + key + ': ' + schoolClass.students[i][key];
     }
-    document.getElementById('students').innerHTML += '</br>';
+    divStudents.innerHTML += '</br>';
 }
 
-if (schoolClass.students.length < maxStudents) {
-    document.getElementById('info').innerHTML = 'Ancora ' + (maxStudents - schoolClass.students.length) + ' posti disponili!';
-} else {
-    document.getElementById('info').innerHTML = 'Non ci sono più posti disponibili';
-}
-
+check();
 
 document.getElementById('add').addEventListener('click', function () {
     if (schoolClass.students.length < maxStudents) {
@@ -47,20 +51,14 @@ document.getElementById('add').addEventListener('click', function () {
 
 
         for (var key in schoolClass.students[schoolClass.students.length - 1]) {
-            document.getElementById('students').innerHTML += '<li>' + key + ': ' + schoolClass.students[schoolClass.students.length - 1][key];
+            divStudents.innerHTML += '<li>' + key + ': ' + schoolClass.students[schoolClass.students.length - 1][key];
         }
-        document.getElementById('students').innerHTML += '</br>';
+        divStudents.innerHTML += '</br>';
 
-        if (schoolClass.students.length < maxStudents) {
-            document.getElementById('info').innerHTML = 'Ancora ' + (maxStudents - schoolClass.students.length) + ' posti disponili!';
-        } else {
-            document.getElementById('info').innerHTML = 'Non ci sono più posti disponibili';
-        }
-
+        check();
 
     } else {
         alert('Non ci sono più posti disponibili!');
-
     }
 
 });
