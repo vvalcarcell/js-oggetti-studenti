@@ -52,10 +52,7 @@ document.getElementById('add').addEventListener('click', function () {
             age: studentAge
         });
 
-
-        for (var key in schoolClass.students[schoolClass.students.length - 1]) {
-            divStudents.innerHTML += '<li>' + key + ': ' + schoolClass.students[schoolClass.students.length - 1][key];
-        }
+        divStudents.innerHTML += '<li>' + schoolClass.students[[schoolClass.students.length - 1]].name + ' ' + schoolClass.students[[schoolClass.students.length - 1]].surname;
         divStudents.innerHTML += '</br>';
 
         check();
