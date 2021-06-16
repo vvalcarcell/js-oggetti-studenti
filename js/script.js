@@ -21,16 +21,14 @@ for (var key in prof) {
 
 var schoolClass = {
     students: [
-        { name: 'Adina', suername: 'Pop', age: 20 },
-        { name: 'Otto', suername: 'Bisotto', age: 20 },
-        { name: 'Pippo', suername: 'Baudo', age: 20 }
+        { name: 'Adina', surname: 'Pop', age: 20 },
+        { name: 'Otto', surname: 'Bisotto', age: 20 },
+        { name: 'Pippo', surname: 'Baudo', age: 20 }
     ]
 }
 
 for (i = 0; i < schoolClass.students.length; i++) {
-    for (var key in schoolClass.students[i]) {
-        divStudents.innerHTML += '<li>' + key + ': ' + schoolClass.students[i][key];
-    }
+    divStudents.innerHTML += '<li>' + schoolClass.students[i].name + ' ' + schoolClass.students[i].surname;
     divStudents.innerHTML += '</br>';
 }
 
